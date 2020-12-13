@@ -58,13 +58,11 @@
 
 .sheet-alignLeft {
     float: left;
-    display: inline-block;
 }
 
 .sheet-alignRight {
     padding-top: 3px;
     float: right;
-    display: inline-block;
 }
 
 .sheet-alignRight button {
@@ -195,7 +193,7 @@
 }
 
 .sheet-mires {
-    grid-area: mires
+    grid-area: mires;
     display: flex-column;
 }
 

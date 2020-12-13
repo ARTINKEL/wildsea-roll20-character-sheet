@@ -4,7 +4,7 @@
             <h1 style="color: white;">Wildsea RPG</h1>
         </div>
         <div class="alignRight">
-            <button type="roll" name="roll_standard" value="&{template:wildsea} {{name=@{name}} {{edge_num={?{Edge?|Grace,@{grace}|Iron,@{iron}|Instinct,@{instinct}|Sharps,@{sharps}|Teeth,@{teeth}|Tides,@{tides}|Veils,@{veils}}}} {{skill_num=?{Skill? (up to 3d6)|Break,@{break}|Charm,@{charm}|Climb,@{climb}|Concoct,@{concoct}|Cook,@{cook}|Craft,@{craft}|Gather,@{gather}|Hack,@{hack}|Heal,@{heal}|Hunt,@{hunt}|Leap,@{leap}|Negotiate,@{negotiate}|Outwit,@{outwit}|Perform,@{perform}|Repair,@{repair}|Scavenge,@{scavenge}|Scramble,@{scramble}|Scrutinize,@{scrutinize}|Scry,@{scry}|Sense,@{sense}|Stealth,@{stealth}|Trance,@{trance}|Wavewalk,@{wavewalk}}d6}} {{advantage_num=?{Advantage? (up to 2d6)|0}}}} {{cut_num=?{Cut?|0}}} {{result=[[({{edge_num}}+{{skill_num}}+{{advantage_num}})d6dh{{cut_num}}]]}}"></button>
+            <button type="roll" name="roll_standard" value="/roll {?{Edge?|Grace,@{grace}|Iron,@{iron}|Instinct,@{instinct}|Sharps,@{sharps}|Teeth,@{teeth}|Tides,@{tides}|Veils,@{veils}}d6 + ?{Skill? (up to 3d6)|Break,@{break}|Charm,@{charm}|Climb,@{climb}|Concoct,@{concoct}|Cook,@{cook}|Craft,@{craft}|Gather,@{gather}|Hack,@{hack}|Heal,@{heal}|Hunt,@{hunt}|Leap,@{leap}|Negotiate,@{negotiate}|Outwit,@{outwit}|Perform,@{perform}|Repair,@{repair}|Scavenge,@{scavenge}|Scramble,@{scramble}|Scrutinize,@{scrutinize}|Scry,@{scry}|Sense,@{sense}|Stealth,@{stealth}|Trance,@{trance}|Wavewalk,@{wavewalk}}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"></button>
         </div>
     </div>
     
@@ -235,26 +235,3 @@
       <span style="color: white;">Created by Austin. Based off the Roll20 Grid Template by Anduh</span>
     </div>
 </div>
-
-<rolltemplate class="sheet-rolltemplate-wildsea">
-    <table>
-        <tr><th>{{name}} rolls{#roll_name}} {{roll_name}}{{/roll_name}}</th></tr>
-        <tr><td class="edge">
-            {{#edge}}
-                Edge({{edge_num}})
-            {{/attr}}
-            {{#skill}}
-                + Skill({{skill_num}})
-            {{/skill}}
-            {{#advantage}}
-                + Advantages({{advantage_num}})
-            {{/advantage}}
-            {{#cut}}
-                - Cut({{cut_num}})
-            {{/cut}}
-        </td></tr>
-        <tr>
-            <td class="result">{{result}}</td>
-        </tr>
-    </table>
-</rolltemplate>
