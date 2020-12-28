@@ -1,25 +1,11 @@
 .sheet-main {
     display: grid;
     width: 820px;
-    height: 1300px;
+    height: 1200px;
     background-color: #ADD2AD;
     grid-gap: 4px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows:  repeat(90px, 1fr, 50px) ;
-    /*grid-template-areas:"header  header header"
-                        "common  common common"
-                        "edges   edges  edges"
-                        "skills  skills aspect"
-                        "skills  skills aspect"
-                        "skills  skills aspect"
-                        "skills  skills aspect"
-                        "skills  skills aspect"
-                        "drivmir drivmir temp"
-                        "lang    lang   temp"
-                        "inv     inv    miles"
-                        "notes   notes  notes"
-                        "footer  footer footer";
-                        */
     grid-template-areas:"header  header header"
                         "common  common common"
                         "edges   edges  edges"
@@ -260,7 +246,8 @@
     height: 25px;
 }
 
-.sheet-aspect select {
+.sheet-aspect select,
+.sheet-temp select {
     appearance: none;
     width: 20px;
 }
@@ -449,7 +436,6 @@ input[type="checkbox"]
     top: 5px;
     left: 15px;
     margin: -10px;
-    cursor: pointer;
     z-index: 1;
 }
 
@@ -490,7 +476,6 @@ input[type="checkbox"]:checked + span::before
     top: 5px;
     left: 6px;
     margin: -10px;
-    cursor: pointer;
     z-index: 1;
 }
 
@@ -521,51 +506,88 @@ input[type="checkbox"]:checked + span::before
 }
 
 /* aspect selectors */
-
 .sheet-databox,
 .sheet-div-show-radio {
     display: none;
 }
 
-.sheet-div-show-1:checked ~ .sheet-aspectBox1{
+.sheet-div-show-1:checked ~ .sheet-aspectBox1 {
 	display: initial;
 }
 .sheet-div-show-2:checked ~ .sheet-aspectBox1,
-.sheet-div-show-2:checked ~ .sheet-aspectBox2{
+.sheet-div-show-2:checked ~ .sheet-aspectBox2 {
 	display: initial;
 }
 .sheet-div-show-3:checked ~ .sheet-aspectBox1,
 .sheet-div-show-3:checked ~ .sheet-aspectBox2,
-.sheet-div-show-3:checked ~ .sheet-aspectBox3{
+.sheet-div-show-3:checked ~ .sheet-aspectBox3 {
 	display: initial;
 }
 
-/*
-.sheet-aspectBox1,
-.sheet-aspectBox2,
-.sheet-aspectBox3,
-.sheet-aspectBox4,
-.sheet-aspectBox5,
-.sheet-aspectBox6 {
-    display: none;
+.sheet-div-show-4:checked ~ .sheet-aspectBox1,
+.sheet-div-show-4:checked ~ .sheet-aspectBox2,
+.sheet-div-show-4:checked ~ .sheet-aspectBox3,
+.sheet-div-show-4:checked ~ .sheet-aspectBox4 {
+	display: initial;
 }
 
-.sheet-hidden1:checked ~ .sheet-aspectBox1,
-.sheet-hidden2:checked ~ .sheet-aspectBox2,
-.sheet-hidden3:checked ~ .sheet-aspectBox3,
-.sheet-hidden4:checked ~ .sheet-aspectBox4,
-.sheet-hidden5:checked ~ .sheet-aspectBox5,
-.sheet-hidden6:checked ~ .sheet-aspectBox6 {
-    display: block;
+.sheet-div-show-5:checked ~ .sheet-aspectBox1,
+.sheet-div-show-5:checked ~ .sheet-aspectBox2,
+.sheet-div-show-5:checked ~ .sheet-aspectBox3,
+.sheet-div-show-5:checked ~ .sheet-aspectBox4,
+.sheet-div-show-5:checked ~ .sheet-aspectBox5 {
+	display: initial;
 }
 
-.sheet input.sheet-databox {
-    width: 0px;
-    height: 0px;
-    opacity: 0;
-    display: none;
+.sheet-div-show-6:checked ~ .sheet-aspectBox1,
+.sheet-div-show-6:checked ~ .sheet-aspectBox2,
+.sheet-div-show-6:checked ~ .sheet-aspectBox3,
+.sheet-div-show-6:checked ~ .sheet-aspectBox4,
+.sheet-div-show-6:checked ~ .sheet-aspectBox5,
+.sheet-div-show-6:checked ~ .sheet-aspectBox6 {
+	display: initial;
 }
-*/
+
+/**********************************************/
+
+.sheet-temp-div-show-1:checked ~ .sheet-tempAspectBox1 {
+	display: initial;
+}
+
+.sheet-temp-div-show-2:checked ~ .sheet-tempAspectBox1,
+.sheet-temp-div-show-2:checked ~ .sheet-tempAspectBox2 {
+	display: initial;
+}
+
+.sheet-temp-div-show-3:checked ~ .sheet-tempAspectBox1,
+.sheet-temp-div-show-3:checked ~ .sheet-tempAspectBox2,
+.sheet-temp-div-show-3:checked ~ .sheet-tempAspectBox3 {
+	display: initial;
+}
+
+.sheet-temp-div-show-4:checked ~ .sheet-tempAspectBox1,
+.sheet-temp-div-show-4:checked ~ .sheet-tempAspectBox2,
+.sheet-temp-div-show-4:checked ~ .sheet-tempAspectBox3,
+.sheet-temp-div-show-4:checked ~ .sheet-tempAspectBox4 {
+	display: initial;
+}
+
+.sheet-temp-div-show-5:checked ~ .sheet-tempAspectBox1,
+.sheet-temp-div-show-5:checked ~ .sheet-tempAspectBox2,
+.sheet-temp-div-show-5:checked ~ .sheet-tempAspectBox3,
+.sheet-temp-div-show-5:checked ~ .sheet-tempAspectBox4,
+.sheet-temp-div-show-5:checked ~ .sheet-tempAspectBox5 {
+	display: initial;
+}
+
+.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox1,
+.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox2,
+.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox3,
+.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox4,
+.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox5,
+.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox6 {
+	display: initial;
+}
 
 /* Remove arrows from number inputs */
 /* Chrome etc */
