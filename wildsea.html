@@ -1,604 +1,346 @@
-.sheet-main {
-    display: grid;
-    width: 820px;
-    height: 1200px;
-    background-color: #ADD2AD;
-    grid-gap: 4px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:  repeat(90px, 1fr, 50px) ;
-    grid-template-areas:"header  header header"
-                        "common  common common"
-                        "edges   edges  edges"
-                        "skills  skills skills"
-                        "skills  skills skills"
-                        "skills  skills skills"
-                        "aspect  aspect aspect"
-                        "aspect  aspect aspect"
-                        "temp    temp   temp"
-                        "drivmir drivmir drivmir"
-                        "inv     inv    inv"
-                        "lang    miles  miles"
-                        "notes   notes  notes"
-                        "footer  footer footer";
-}
-
-
-
-/*----------------- GENERAL CSS ------------------*/
-
-.sheet-section input[type=number] {
-    text-align: center;
-    width: 30px;
-}
-
-.sheet-section {
-    padding: 5px;
-    border-style: solid;
-}
-
-.sheet-sectionNoBorder {
-    border-style: none;
-}
-
-.sheet-drivmirSection {
-    padding: 0px;
-    border-style: none;
-}
-
-.sheet-skillSection {
-    padding: 5px;
-    border-width: 2px;
-    border-style: solid;
-    width: 115px;
-}
-
-.sheet-flex-col {
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.sheet-flex-center {
-    align-items: center;
-    justify-content: center;
-}
-
-.sheet-alignLeft {
-    float: left;
-}
-
-.sheet-alignRight {
-    padding-top: 3px;
-    float: right;
-}
-
-.sheet-alignRight button {
-    font-size: 24px;
-}
-
-/*------------- Section-specific CSS -------------*/
-
-.sheet-header {
-    grid-area: header;
-    background-color: #228B22;
-    flex-direction: column;
-}
-
-/********Common**********/
-.sheet-common {
-    grid-area: common;
-    background-color: #E4F0E4;
-    flex-direction: row;
-    height: 30px;
-    display: grid;
-    grid-gap: 1px;
-    grid-template-columns: 270px 190px 1fr 1fr;
-    grid-template-rows: 50px 1fr;
-    grid-template-areas:"name bloodline origin post"
-}
-
-.sheet-common select {
-    width: 110px;
-}
-
-.sheet-common label {
-    font-size: 14px;
-}
-
-.sheet-name {
-    grid-area: name;
-}
-
-.sheet-bloodline {
-    grid-area: bloodline;
-}
-
-.sheet-origin {
-    grid-area: origin;
-}
-
-.sheet-post {
-    grid-area: post;
-}
-/*************************/
-
-.sheet-edges {
-    grid-area: edges;
-    background-color: #E4F0E4;
-    display: grid;
-    grid-gap: 1px;
-    grid-template-columns: repeat(50px);
-    grid-template-rows: 1fr;
-    grid-template-areas:"grace iron instinct sharps teeth tides veils"
-}
-
-.sheet-edges input[type=checkbox] {
-    width: 25px;
-    height: 25px;
-}
-
-.sheet-grace {
-    grid-area: grace;
-    text-align: center;
-}
-
-.sheet-iron {
-    grid-area: iron;
-    text-align: center;
-}
-
-.sheet-instinct {
-    grid-area: instinct;
-    text-align: center;
-}
-
-.sheet-sharps {
-    grid-area: sharps;
-    text-align: center;
-}
-
-.sheet-teeth {
-    grid-area: teeth;
-    text-align: center;
-}
-
-.sheet-tides {
-    grid-area: tides;
-    text-align: center;
-}
-
-.sheet-veils {
-    grid-area: veils;
-    text-align: center;
-}
-
-.sheet-grace label,
-.sheet-iron label,
-.sheet-instinct label,
-.sheet-sharps label,
-.sheet-teeth label,
-.sheet-tides label,
-.sheet-veils label {
-    text-align: center;
-}
-
-/*******Mires/Drives******/
-.sheet-drivmir {
-    grid-area:drivmir;
-    background-color: #E4F0E4;
-    display: grid;
-    grid-gap: 4px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas:"drives mires";
-}
-
-.sheet-drives {
-    grid-area: drives;
-    width: 392px;
-}
-
-.sheet-drives input[type=text] {
-    width: 390px;
-}
-
-.sheet-mires {
-    grid-area: mires;
-    width: 392px;
-}
-
-.sheet-mires input[type=text] {
-    width: 340px;
-    margin-right: 4px;
-}
-
-.sheet-lang {
-    grid-area: lang;
-    width: 400px;
-    background-color: #E4F0E4;
-}
-
-.sheet-shorterBox {
-    width: 150px;
-}
-
-/*************************/
-
-.sheet-aspect {
-    grid-area: aspect;
-    background-color: #E4F0E4;
-    width: 804px;
-}
-
-.sheet-aspect input[type=text],
-.sheet-temp input[type=text] {
-    width: 300px;
-    font-size: 14px;
-}
-
-.sheet-bold {
-    font-weight: 700;
-}
-
-.sheet-aspect input[type=checkbox],
-.sheet-temp input[type=checkbox],
-.sheet-mires input[type=checkbox] {
-    width: 25px;
-    height: 25px;
-}
-
-.sheet-aspect select,
-.sheet-temp select {
-    appearance: none;
-    width: 20px;
-}
-
-.sheet-skills {
-    grid-area: skills;
-    background-color: #E4F0E4;
-    width: 804px;
-    display: grid;
-    grid-gap: 1px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 20px 1fr;
-    grid-template-areas:"header   .         .        .        .      .     "
-                        "movement detection survival creation social combat";
-}
-
-/****** Roll Buttons ******/
-/* Roll buttons for attributes and skils */
-.sheet-skills button[type=roll] {   
-    background-color: transparent;
-    color: black;
-    border: none;
-    background-image: none;
-    text-shadow: none;
-    box-shadow: none;
+<div class="main">
+    <div class="header flex-center section">
+        <div class="alignLeft">
+            <h1 style="color: white;">Wildsea RPG</h1>
+        </div>
+        <div class="alignRight">
+            <button type="roll" name="roll_standard" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + ?{Skill? (up to 3d6)|Break,@{break}|Charm,@{charm}|Climb,@{climb}|Concoct,@{concoct}|Cook,@{cook}|Craft,@{craft}|Gather,@{gather}|Hack,@{hack}|Heal,@{heal}|Hunt,@{hunt}|Leap,@{leap}|Negotiate,@{negotiate}|Outwit,@{outwit}|Perform,@{perform}|Repair,@{repair}|Scavenge,@{scavenge}|Scramble,@{scramble}|Scrutinize,@{scrutinize}|Scry,@{scry}|Sense,@{sense}|Stealth,@{stealth}|Trance,@{trance}|Wavewalk,@{wavewalk}}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"></button>
+        </div>
+    </div>
     
-    color: inherit;
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-}
-
-.sheet-skills button[type=roll]:focus {
-    outline: none;
-}
-
-.sheet-skills button[type=roll]::before {
-    display: none;
-}
-
-.sheet-skills button[type=roll]:hover {
-    color: #245486;
-}
-
-.sheet-skills span {
-    display: inline-block;
-    text-align: right;
-    float: right;
-}
-
-/******Skills************/
-.sheet-movement {
-    grid-area: movement;
-}
-
-.sheet-detection {
-    grid-area: detection;
-}
-
-.sheet-survival {
-    grid-area: survival;
-}
-
-.sheet-creation {
-    grid-area: creation;
-}
-
-.sheet-social {
-    grid-area: social;
-}
-
-.sheet-combat {
-    grid-area: combat;
-}
-
-.sheet-center {
-    text-align: center;
-    text-decoration: underline;
-}
-
-.sheet-skillInterior {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    grid-gap: 5px;
-    float: right;
-}
-
-.sheet-skillInterior label {
-    display: inline-block;
-    text-align: right;
-}
-
-/*************************/
-
-.sheet-temp {
-    grid-area: temp;
-    background-color: #E4F0E4;
-    width: 804px;
-}
-
-/**********Inventory**********/
-.sheet-inv {
-    grid-area: inv;
-    display: grid;
-    background-color: #E4F0E4;
-    grid-gap: 4px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(15px, 200fr);
-    grid-template-areas:"header   ." 
-                        "salvage  specimens" 
-                        "whispers charts";
-}
-
-.sheet-inv input[type=text] {
-    width: 250px;
-}
-
-.sheet-salvage {
-    grid-area: salvage;
-    width: 95%;
-}
-
-.sheet-specimens {
-    grid-area: specimens;
-    width: 95%;
-}
-
-.sheet-whispers {
-    grid-area: whispers;
-    width: 95%;
-}
-
-.sheet-charts {
-    grid-area: charts;
-    width: 95%;
-}
-
-/*************************/
-
-
-/*******Milestones********/
-.sheet-miles {
-    grid-area: miles;
-    background-color: #E4F0E4;
-    display: grid;
-    grid-gap: 4px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 30px 1fr 1fr;
-    grid-template-areas:"header"
-                        "major"
-                        "minor";
-}
-
-.sheet-miles input[type=text] {
-    width: 100%;
-}
-
-.sheet-major {
-    grid-area: major;
-}
-
-.sheet-minor {
-    grid-area: minor;
-}
-/*************************/
-
-.sheet-notes {
-    grid-area: notes;
-    background-color: #E4F0E4;
-}
-
-.sheet-bigtext {
-    width: 650px;
-}
-
-/* Checkboxes */
-/* hide original check so I can style it*/
-input[type="checkbox"]
-{
-    opacity: 0;
-    width: 25px;
-    height: 25px;
-    position: relative;
-    top: 5px;
-    left: 15px;
-    margin: -10px;
-    z-index: 1;
-}
-
-/* create my own checkbox */
-input[type="checkbox"] + span::before
-{
-    margin-right: 4px;
-    border: solid 2px black;
-    border-radius: 5px;
-    line-height: 100%;
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
+    <div class="common section">
+        <div class="name sectionNoBorder">
+            <label>Name  <input class="bold" type="text" name="attr_name"/></label>
+        </div>
+        
+        <div class="bloodline sectionNoBorder">
+            <label>Bloodline
+            <select name="attr_bloodline">
+                <option value="ardent">Ardent</option>
+                <option value="ektus">Ektus</option>
+                <option value="gau">Gau</option>
+                <option value="ironbound">Ironbound</option>
+                <option value="ketra">Ketra</option>
+                <option value="tzelicrae">Tzelicrae</option>
+            </select>
+            </label>
+        </div>
+        
+        <div class="origin sectionNoBorder">
+            <label>Origin
+            <select name="attr_origin">
+                <option value="anchored">Anchored</option>
+                <option value="ridgeback">Ridgeback</option>
+                <option value="rootless">Rootless</option>
+                <option value="Shankling">Shankling</option>
+                <option value="spitborn">Spit-Born</option>
+                <option value="submerged">Submerged</option>
+                <option value="windward">Windward</option>
+            </select>
+            </label>
+        </div>
+        
+        <div class="post sectionNoBorder">
+            <label>Post
+            <select name="attr_post">
+                <option value="alchemist">Alchemist</option>
+                <option value="char">Char</option>
+                <option value="corsair">Corsair</option>
+                <option value="dredger">Dredger</option>
+                <option value="hacker">Hacker</option>
+                <option value="horizoneer">Horizoneer</option>
+                <option value="hunter">Hunter</option>
+                <option value="navigator">Navigator</option>
+                <option value="rattlehand">Rattlehand</option>
+                <option value="screw">Screw</option>
+                <option value="slinger">Slinger</option>
+                <option value="steep">Steep</option>
+                <option value="surgeon">Surgeon</option>
+                <option value="tempest">Tempest</option>
+            </select>
+            </label>
+        </div>
+    </div>
     
-    width: 25px;
-    height: 25px;
-    content: "";
     
-    background: #E4F0E4;
-}
-
-input[type="checkbox"]:checked + span::before
-{
-    content: "";
-    text-align: center;
-    vertical-align: middle;
-    line-height: 25px;
-    color: white;
-    background-color: #245486;
-}
-
-.sheet-mires input[type="checkbox"]
-{
-    opacity: 0;
-    width: 16px;
-    height: 16px;
-    position: relative;
-    top: 5px;
-    left: 6px;
-    margin: -10px;
-    z-index: 1;
-}
-
-.sheet-mires input[type="checkbox"] + span::before {
-    margin-right: 4px;
-    border: solid 2px black;
-    border-radius: 5px;
-    line-height: 100%;
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
+    <div class="edges section">
+        <div class="grace"><label>Grace</label><input type="checkbox" name="attr_grace"/><span></span></div>
+        <div class="iron"><label>Iron</label><input type="checkbox" name="attr_iron" value="0"/><span></span></div>
+        <div class="instinct"><label>Instinct</label><input type="checkbox" name="attr_instinct"/><span></span></div>
+        <div class="sharps"><label>Sharps</label><input type="checkbox" name="attr_sharps"/><span></span></div>
+        <div class="teeth"><label>Teeth</label><input type="checkbox" name="attr_teeth"/><span></span></div>
+        <div class="tides"><label>Tides</label><input type="checkbox" name="attr_tides"/><span></span></div>
+        <div class="veils"><label>Veils</label><input type="checkbox" name="attr_veils"/><span></span></div>
+    </div>
     
-    width: 16px;
-    height: 16px;
-    content: "";
+    <div class="skills section">
+        <label>Skills</label>
+        <div class="movement skillSection">
+            <label class="center">Movement</label>
+            <div class="skillInterior">
+                <button type="roll" name="roll_climb" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{climb}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Climb</span></button><input type="number" name="attr_climb" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_scramble" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{scramble}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Scramble</span></button><input type="number" name="attr_scramble" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_leap" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{leap}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Leap</span></button><input type="number" name="attr_leap" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_stealth" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{stealth}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Stealth</span></button><input type="number" name="attr_stealth" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_wavewalk" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{wavewalk}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Wavewalk</span></button><input type="number" name="attr_wavewalk" min="0" max="3" placeholder="0" value=0>
+            </div>
+        </div>
+        <div class="detection skillSection">
+            <label class="center">Detection</label>
+            <div class="skillInterior">
+                <button type="roll" name="roll_scrutinize" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{scrutinize}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Scrutinize</span></button><input type="number" name="attr_scrutinize" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_sense" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{sense}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Sense</span></button><input type="number" name="attr_sense" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_hunt" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{hunt}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Hunt</span></button><input type="number" name="attr_hunt" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_scry" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{scry}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Scry</span></button><input type="number" name="attr_scry" min="0" max="3" placeholder="0" value=0>
+            </div>
+        </div>
+        <div class="survival skillSection">
+            <label class="center">Survival</label>
+            <div class="skillInterior">
+                <button type="roll" name="roll_hack" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{hack}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Hack</span></button><input type="number" name="attr_hack" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_break" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{break}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Break</span></button><input type="number" name="attr_break" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_gather" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{gather}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Gather</span></button><input type="number" name="attr_break" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_scavenge" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{scavenge}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Scavenge</span></button><input type="number" name="attr_scavenge" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_heal" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{heal}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Heal</span></button><input type="number" name="attr_heal" min="0" max="3" placeholder="0">
+                <button type="roll" name="roll_repair" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{repair}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Repair</span></button><input type="number" name="attr_repair" min="0" max="3" placeholder="0" value=0>
+            </div>
+        </div>
+        <div class="creation skillSection">
+            <label class="center">Creation</label>
+            <div class="skillInterior">
+                <button type="roll" name="roll_craft" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{craft}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Craft</span></button><input type="number" name="attr_craft" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_cook" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{cook}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Cook</span></button><input type="number" name="attr_cook" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_concoct" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{concoct}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Concoct</span></button><input type="number" name="attr_concoct" min="0" max="3" placeholder="0" value=0>
+            </div>
+        </div>
+        <div class="social skillSection">
+            <label class="center">Social</label>
+            <div class="skillInterior">
+                <button type="roll" name="roll_charm" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{charm}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Charm</span></button><input type="number" name="attr_charm" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_negotiate" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{negotiate}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Negotiate</span></button><input type="number" name="attr_negotiate" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_outwit" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{outwit}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Outwit</span></button><input type="number" name="attr_outwit" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_perform" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{perform}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Perform</span></button><input type="number" name="attr_perform" min="0" max="3" placeholder="0" value=0>
+                <button type="roll" name="roll_trance" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{trance}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Trance</span></button><input type="number" name="attr_trance" min="0" max="3" placeholder="0" value=0>
+            </div>
+        </div>
+        <div class="combat skillSection">
+            <label class="center">Combat</label>
+            <div class="skillInterior">
+                <button type="roll" name="roll_strike" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{strike}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Strike</span></button><input type="number" name="attr_strike" min="0" max="3" placeholder="0">
+                <button type="roll" name="roll_shoot" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{shoot}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Shoot</span></button><input type="number" name="attr_shoot" min="0" max="3" placeholder="0">
+                <button type="roll" name="roll_hex" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{hex}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Hex</span></button><input type="number" name="attr_hex" min="0" max="3" placeholder="0">
+                <button type="roll" name="roll_brace" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{brace}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Brace</span></button><input type="number" name="attr_brace" min="0" max="3" placeholder="0">
+                <button type="roll" name="roll_dodge" value="/roll {?{Edge?|None,0|Grace,1|Iron,1|Instinct,1|Sharps,1|Teeth,1|Tides,1|Veils,1}d6 + @{dodge}d6 + ?{Advantage? (up to 2d6)|0}d6}dh?{Cut?|0}"><span>Dodge</span></button><input type="number" name="attr_dodge" min="0" max="3" placeholder="0">
+            </div>
+        </div>
+    </div>
     
-    background: #E4F0E4;
-}
-
-.sheet-mires input[type="checkbox"]:checked + span::before
-{
-    content: "";
-    text-align: center;
-    vertical-align: middle;
-    line-height: 16px;
-    color: white;
-    background-color: #245486;
-}
-
-/* aspect selectors */
-.sheet-databox,
-.sheet-div-show-radio {
-    display: none;
-}
-
-.sheet-div-show-1:checked ~ .sheet-aspectBox1 {
-	display: initial;
-}
-.sheet-div-show-2:checked ~ .sheet-aspectBox1,
-.sheet-div-show-2:checked ~ .sheet-aspectBox2 {
-	display: initial;
-}
-.sheet-div-show-3:checked ~ .sheet-aspectBox1,
-.sheet-div-show-3:checked ~ .sheet-aspectBox2,
-.sheet-div-show-3:checked ~ .sheet-aspectBox3 {
-	display: initial;
-}
-
-.sheet-div-show-4:checked ~ .sheet-aspectBox1,
-.sheet-div-show-4:checked ~ .sheet-aspectBox2,
-.sheet-div-show-4:checked ~ .sheet-aspectBox3,
-.sheet-div-show-4:checked ~ .sheet-aspectBox4 {
-	display: initial;
-}
-
-.sheet-div-show-5:checked ~ .sheet-aspectBox1,
-.sheet-div-show-5:checked ~ .sheet-aspectBox2,
-.sheet-div-show-5:checked ~ .sheet-aspectBox3,
-.sheet-div-show-5:checked ~ .sheet-aspectBox4,
-.sheet-div-show-5:checked ~ .sheet-aspectBox5 {
-	display: initial;
-}
-
-.sheet-div-show-6:checked ~ .sheet-aspectBox1,
-.sheet-div-show-6:checked ~ .sheet-aspectBox2,
-.sheet-div-show-6:checked ~ .sheet-aspectBox3,
-.sheet-div-show-6:checked ~ .sheet-aspectBox4,
-.sheet-div-show-6:checked ~ .sheet-aspectBox5,
-.sheet-div-show-6:checked ~ .sheet-aspectBox6 {
-	display: initial;
-}
-
-/**********************************************/
-
-.sheet-temp-div-show-1:checked ~ .sheet-tempAspectBox1 {
-	display: initial;
-}
-
-.sheet-temp-div-show-2:checked ~ .sheet-tempAspectBox1,
-.sheet-temp-div-show-2:checked ~ .sheet-tempAspectBox2 {
-	display: initial;
-}
-
-.sheet-temp-div-show-3:checked ~ .sheet-tempAspectBox1,
-.sheet-temp-div-show-3:checked ~ .sheet-tempAspectBox2,
-.sheet-temp-div-show-3:checked ~ .sheet-tempAspectBox3 {
-	display: initial;
-}
-
-.sheet-temp-div-show-4:checked ~ .sheet-tempAspectBox1,
-.sheet-temp-div-show-4:checked ~ .sheet-tempAspectBox2,
-.sheet-temp-div-show-4:checked ~ .sheet-tempAspectBox3,
-.sheet-temp-div-show-4:checked ~ .sheet-tempAspectBox4 {
-	display: initial;
-}
-
-.sheet-temp-div-show-5:checked ~ .sheet-tempAspectBox1,
-.sheet-temp-div-show-5:checked ~ .sheet-tempAspectBox2,
-.sheet-temp-div-show-5:checked ~ .sheet-tempAspectBox3,
-.sheet-temp-div-show-5:checked ~ .sheet-tempAspectBox4,
-.sheet-temp-div-show-5:checked ~ .sheet-tempAspectBox5 {
-	display: initial;
-}
-
-.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox1,
-.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox2,
-.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox3,
-.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox4,
-.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox5,
-.sheet-temp-div-show-6:checked ~ .sheet-tempAspectBox6 {
-	display: initial;
-}
-
-/* Remove arrows from number inputs */
-/* Chrome etc */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-    -moz-appearance: textfield;
-}
+    <div class="drivmir drivmirSection">
+        <div class="drives section">
+            <label>Drives</label><input type="text" name="attr_drive1">
+            <input type="text" name="attr_drive2">
+            <input type="text" name="attr_drive3">
+        </div>
+        <div class="mires section">
+            <label>Mires</label>
+                <input type="text" name="attr_mire1">
+                <input type="checkbox" name="attr_mire1Charge1"><span></span>
+                <input type="checkbox" name="attr_mire1Charge2"><span></span>
+                <input type="text" name="attr_mire2">
+                <input type="checkbox" name="attr_mire2Charge1"><span></span>
+                <input type="checkbox" name="attr_mire2Charge2"><span></span>
+                <input type="text" name="attr_mire3">
+                <input type="checkbox" name="attr_mire3Charge1"><span></span>
+                <input type="checkbox" name="attr_mire3Charge2"><span></span>
+        </div>
+    </div>
+    
+    <div class="lang section">
+        <label>Languages</label>
+        <input class="shorterBox" type="text" name="attr_lowSour" value="Low Sour">
+        <input type="text" name="attr_langDescription" value="A mongrel language. Common.">
+        <input type="number" name="attr_lowSour" value=3>
+        <fieldset class="repeating_lang">
+            <input class="shorterBox" type="text" name="attr_lang" placeholder="Language">
+            <input type="text" name="attr_langDescription" placeholder="Description">
+            <input type="number" name="attr_langRating" placeholder="0">
+        </fieldset>
+    </div>
+    
+    <div class="miles section">
+        <label>Milestones</label>
+        <div class="major sectionNoBorder">
+            <label>Major</label>
+            <fieldset class="repeating_majorMilestones">
+                <input type="text" name="attr_majorMilestone">
+            </fieldset>
+        </div>
+        <div class="minor sectionNoBorder">
+            <label>Minor</label>
+            <fieldset class="repeating_minorMilestones">
+                <input type="text" name="attr_minorMilestone">
+            </fieldset>
+        </div>
+    </div>
+    
+    <div class="aspect section">
+        <label>Aspects</label>
+        <fieldset class="repeating_aspects">
+            <input class="bold" type="text" name="attr_aspect" placeholder="Aspect">
+            <input type="text" name="attr_aspectDescription" placeholder="Rule">
+            
+            <select name="attr_aspectLength">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            
+            <label style="display:inline;">|</label>
+            
+            <input class="div-show-radio div-show-1" name="attr_aspectLength" type="radio" value="1">
+            <input class="div-show-radio div-show-2" name="attr_aspectLength" type="radio" value="2">
+            <input class="div-show-radio div-show-3" name="attr_aspectLength" type="radio" value="3">
+            <input class="div-show-radio div-show-4" name="attr_aspectLength" type="radio" value="4">
+            <input class="div-show-radio div-show-5" name="attr_aspectLength" type="radio" value="5">
+            <input class="div-show-radio div-show-6" name="attr_aspectLength" type="radio" value="6">
+            
+            <select class="databox aspectBox1" name="attr_aspectBox1">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            <select class="databox aspectBox2" name="attr_aspectBox2">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            <select class="databox aspectBox3" name="attr_aspectBox3">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            <select class="databox aspectBox4" name="attr_aspectBox4">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            <select class="databox aspectBox5" name="attr_aspectBox5">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            <select class="databox aspectBox6" name="attr_aspectBox6">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            
+            <!-- blank space -->
+            <div stlye="height:20px;"></div>
+        </fieldset>
+    </div>
+    
+    <div class="temp section">
+        <label>Temp Aspects</label>
+        <fieldset class="repeating_tempAspects">
+            <input class="bold" type="text" name="attr_aspect" placeholder="Aspect">
+            <input type="text" name="attr_aspectDescription" placeholder="Rule">
+            
+            <select name="attr_tempAspectLength">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            
+            <label style="display:inline;">|</label>
+            
+            <input class="div-show-radio temp-div-show-1" name="attr_tempAspectLength" type="radio" value="1">
+            <input class="div-show-radio temp-div-show-2" name="attr_tempAspectLength" type="radio" value="2">
+            <input class="div-show-radio temp-div-show-3" name="attr_tempAspectLength" type="radio" value="3">
+            <input class="div-show-radio temp-div-show-4" name="attr_tempAspectLength" type="radio" value="4">
+            <input class="div-show-radio temp-div-show-5" name="attr_tempAspectLength" type="radio" value="5">
+            <input class="div-show-radio temp-div-show-6" name="attr_tempAspectLength" type="radio" value="6">
+            
+            <select class="databox tempAspectBox1" name="attr_tempAspectBox1">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            <select class="databox tempAspectBox2" name="attr_tempAspectBox2">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            <select class="databox tempAspectBox3" name="attr_tempAspectBox3">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            <select class="databox tempAspectBox4" name="attr_tempAspectBox4">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            <select class="databox tempAspectBox5" name="attr_aspectBox5">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            <select class="databox tempAspectBox6" name="attr_tempAspectBox6">
+                <option value=""></option>
+                <option value="O">O</option>
+                <option value="X">X</option>
+            </select>
+            
+            <!-- blank space -->
+            <div stlye="height:20px;"></div>
+        </fieldset>
+    </div>
+    
+    <div class="inv section">
+        <label>Inventory</label>
+        <div class="salvage skillSection">
+            <label>Salvage</label>
+            <fieldset class="repeating_salvage">
+                <input style="width:120px;" type="test" name="attr_savageName" placeholder="Name">
+                <input type="text" name="attr_salvageDesc" placeholder="Description">
+            </fieldset>
+        </div>
+        <div class="specimens skillSection">
+            <label>Specimens</label>
+            <fieldset class="repeating_specimens">
+                <input style="width:120px;" type="text" name="attr_specimenName" placeholder="Name">
+                <input type="text" name="attr_specimenDesc" placeholder="Description">
+            </fieldset>
+        </div>
+        <div class="whispers skillSection">
+            <label>Whispers</label>
+            <fieldset class="repeating_whispers">
+                <input style="width:120px;" type="text" name="attr_whisperName" placeholder="Name">
+                <input type="text" name="attr_whisperDesc" placeholder="Description">
+            </fieldset>
+        </div>
+        <div class="charts skillSection">
+            <label>Charts</label>
+            <fieldset class="repeating_charts">
+                <input style="width:120px;" type="text" name="attr_chartName" placeholder="Name">
+                <input type="text" name="attr_chartDesc" placeholder="Description">
+            </fieldset>
+        </div>
+    </div>
+    
+    <div class="notes section">
+        <label>Notes</label>
+        <fieldset class="repeating_notes">
+            <input class="bold" style="width:150px;" type="text" name="attr_noteTitle" placeholder="Title">
+            <input class="bigtext" type="text" name="attr_noteBody" placeholder="Note text.">
+        </fieldset>
+    </div>
+</div>
 
