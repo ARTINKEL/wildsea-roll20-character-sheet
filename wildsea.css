@@ -1,11 +1,12 @@
 .sheet-main {
     display: grid;
-    width: 900px;
-    height: 1100px;
+    width: 820px;
+    height: 1300px;
+    background-color: #ADD2AD;
     grid-gap: 4px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows:  repeat(90px, 1fr, 50px) ;
-    grid-template-areas:"header  header header"
+    /*grid-template-areas:"header  header header"
                         "common  common common"
                         "edges   edges  edges"
                         "skills  skills aspect"
@@ -18,7 +19,24 @@
                         "inv     inv    miles"
                         "notes   notes  notes"
                         "footer  footer footer";
+                        */
+    grid-template-areas:"header  header header"
+                        "common  common common"
+                        "edges   edges  edges"
+                        "skills  skills skills"
+                        "skills  skills skills"
+                        "skills  skills skills"
+                        "aspect  aspect aspect"
+                        "aspect  aspect aspect"
+                        "temp    temp   temp"
+                        "drivmir drivmir drivmir"
+                        "inv     inv    inv"
+                        "lang    miles  miles"
+                        "notes   notes  notes"
+                        "footer  footer footer";
 }
+
+
 
 /*----------------- GENERAL CSS ------------------*/
 
@@ -45,6 +63,7 @@
     padding: 5px;
     border-width: 2px;
     border-style: solid;
+    width: 115px;
 }
 
 .sheet-flex-col {
@@ -74,18 +93,19 @@
 
 .sheet-header {
     grid-area: header;
-    background-color: green;
+    background-color: #228B22;
     flex-direction: column;
 }
 
 /********Common**********/
 .sheet-common {
     grid-area: common;
+    background-color: #E4F0E4;
     flex-direction: row;
     height: 30px;
     display: grid;
     grid-gap: 1px;
-    grid-template-columns: 300px 1fr 1fr 1fr;
+    grid-template-columns: 270px 190px 1fr 1fr;
     grid-template-rows: 50px 1fr;
     grid-template-areas:"name bloodline origin post"
 }
@@ -117,6 +137,7 @@
 
 .sheet-edges {
     grid-area: edges;
+    background-color: #E4F0E4;
     display: grid;
     grid-gap: 1px;
     grid-template-columns: repeat(50px);
@@ -127,11 +148,6 @@
 .sheet-edges input[type=checkbox] {
     width: 25px;
     height: 25px;
-}
-
-.sheet-checkbox > input:checked {
-    border: 1px solid #41B883;
-    background-color: #34495E;
 }
 
 .sheet-grace {
@@ -182,33 +198,37 @@
 /*******Mires/Drives******/
 .sheet-drivmir {
     grid-area:drivmir;
+    background-color: #E4F0E4;
     display: grid;
     grid-gap: 4px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:"drives"
-                        "mires"
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:"drives mires";
 }
 
 .sheet-drives {
     grid-area: drives;
+    width: 392px;
 }
 
 .sheet-drives input[type=text] {
-    width: 410px;
+    width: 390px;
 }
 
 .sheet-mires {
     grid-area: mires;
-    display: flex-column;
+    width: 392px;
 }
 
 .sheet-mires input[type=text] {
-    width: 350px;
+    width: 340px;
+    margin-right: 4px;
 }
 
 .sheet-lang {
     grid-area: lang;
+    width: 400px;
+    background-color: #E4F0E4;
 }
 
 .sheet-shorterBox {
@@ -219,7 +239,8 @@
 
 .sheet-aspect {
     grid-area: aspect;
-    width: 450px;
+    background-color: #E4F0E4;
+    width: 804px;
 }
 
 .sheet-aspect input[type=text],
@@ -239,16 +260,57 @@
     height: 25px;
 }
 
+.sheet-aspect select {
+    appearance: none;
+    width: 20px;
+}
+
 .sheet-skills {
     grid-area: skills;
-    width: 414px;
+    background-color: #E4F0E4;
+    width: 804px;
     display: grid;
-    grid-gap: 4px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 20px 1fr 1fr;
-    grid-template-areas:"header   .         ."
-                        "movement detection survival"
-                        "creation social    combat";
+    grid-gap: 1px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 20px 1fr;
+    grid-template-areas:"header   .         .        .        .      .     "
+                        "movement detection survival creation social combat";
+}
+
+/****** Roll Buttons ******/
+/* Roll buttons for attributes and skils */
+.sheet-skills button[type=roll] {   
+    background-color: transparent;
+    color: black;
+    border: none;
+    background-image: none;
+    text-shadow: none;
+    box-shadow: none;
+    
+    color: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+.sheet-skills button[type=roll]:focus {
+    outline: none;
+}
+
+.sheet-skills button[type=roll]::before {
+    display: none;
+}
+
+.sheet-skills button[type=roll]:hover {
+    color: #245486;
+}
+
+.sheet-skills span {
+    display: inline-block;
+    text-align: right;
+    float: right;
 }
 
 /******Skills************/
@@ -293,48 +355,49 @@
     text-align: right;
 }
 
-.sheet-skillInterior input[type=number] {
-    top: -5px;
-    position: relative;
-    vertical-align: bottom;
-}
 /*************************/
 
 .sheet-temp {
     grid-area: temp;
-    width: 450px;
+    background-color: #E4F0E4;
+    width: 804px;
 }
 
 /**********Inventory**********/
 .sheet-inv {
     grid-area: inv;
     display: grid;
+    background-color: #E4F0E4;
     grid-gap: 4px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(15px, 1fr);
+    grid-template-rows: repeat(15px, 200fr);
     grid-template-areas:"header   ." 
                         "salvage  specimens" 
                         "whispers charts";
 }
 
 .sheet-inv input[type=text] {
-    width: 190px;
+    width: 250px;
 }
 
 .sheet-salvage {
     grid-area: salvage;
+    width: 95%;
 }
 
 .sheet-specimens {
     grid-area: specimens;
+    width: 95%;
 }
 
 .sheet-whispers {
     grid-area: whispers;
+    width: 95%;
 }
 
 .sheet-charts {
     grid-area: charts;
+    width: 95%;
 }
 
 /*************************/
@@ -343,6 +406,7 @@
 /*******Milestones********/
 .sheet-miles {
     grid-area: miles;
+    background-color: #E4F0E4;
     display: grid;
     grid-gap: 4px;
     grid-template-columns: 1fr;
@@ -367,16 +431,141 @@
 
 .sheet-notes {
     grid-area: notes;
+    background-color: #E4F0E4;
 }
 
 .sheet-bigtext {
     width: 650px;
 }
 
-.sheet-footer {
-    grid-area: footer;
-    background-color: gray;
+/* Checkboxes */
+/* hide original check so I can style it*/
+input[type="checkbox"]
+{
+    opacity: 0;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 5px;
+    left: 15px;
+    margin: -10px;
+    cursor: pointer;
+    z-index: 1;
 }
+
+/* create my own checkbox */
+input[type="checkbox"] + span::before
+{
+    margin-right: 4px;
+    border: solid 2px black;
+    border-radius: 5px;
+    line-height: 100%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    
+    width: 25px;
+    height: 25px;
+    content: "";
+    
+    background: #E4F0E4;
+}
+
+input[type="checkbox"]:checked + span::before
+{
+    content: "";
+    text-align: center;
+    vertical-align: middle;
+    line-height: 25px;
+    color: white;
+    background-color: #245486;
+}
+
+.sheet-mires input[type="checkbox"]
+{
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    margin: -10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.sheet-mires input[type="checkbox"] + span::before {
+    margin-right: 4px;
+    border: solid 2px black;
+    border-radius: 5px;
+    line-height: 100%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    
+    width: 16px;
+    height: 16px;
+    content: "";
+    
+    background: #E4F0E4;
+}
+
+.sheet-mires input[type="checkbox"]:checked + span::before
+{
+    content: "";
+    text-align: center;
+    vertical-align: middle;
+    line-height: 16px;
+    color: white;
+    background-color: #245486;
+}
+
+/* aspect selectors */
+
+.sheet-databox,
+.sheet-div-show-radio {
+    display: none;
+}
+
+.sheet-div-show-1:checked ~ .sheet-aspectBox1{
+	display: initial;
+}
+.sheet-div-show-2:checked ~ .sheet-aspectBox1,
+.sheet-div-show-2:checked ~ .sheet-aspectBox2{
+	display: initial;
+}
+.sheet-div-show-3:checked ~ .sheet-aspectBox1,
+.sheet-div-show-3:checked ~ .sheet-aspectBox2,
+.sheet-div-show-3:checked ~ .sheet-aspectBox3{
+	display: initial;
+}
+
+/*
+.sheet-aspectBox1,
+.sheet-aspectBox2,
+.sheet-aspectBox3,
+.sheet-aspectBox4,
+.sheet-aspectBox5,
+.sheet-aspectBox6 {
+    display: none;
+}
+
+.sheet-hidden1:checked ~ .sheet-aspectBox1,
+.sheet-hidden2:checked ~ .sheet-aspectBox2,
+.sheet-hidden3:checked ~ .sheet-aspectBox3,
+.sheet-hidden4:checked ~ .sheet-aspectBox4,
+.sheet-hidden5:checked ~ .sheet-aspectBox5,
+.sheet-hidden6:checked ~ .sheet-aspectBox6 {
+    display: block;
+}
+
+.sheet input.sheet-databox {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    display: none;
+}
+*/
 
 /* Remove arrows from number inputs */
 /* Chrome etc */
